@@ -80,7 +80,7 @@ function updateSummary() {
         current_num_items.innerHTML = num_items + " item in your cart";
     } else current_num_items.innerHTML = num_items + " items in your cart";    
 
-    total = mango.subtotal + plum.subtotal + kiwi.subtotal + pineapple.subtotal;
+    total = Number(mango.subtotal) + Number(plum.subtotal) + Number(kiwi.subtotal) + Number(pineapple.subtotal);
     total = (Math.round(total * 100) / 100).toFixed(2);
     const current_total = document.getElementById("subtotal");
     current_total.innerHTML = "Total: $" + total; 
