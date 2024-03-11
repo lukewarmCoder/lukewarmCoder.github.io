@@ -1,0 +1,350 @@
+/* Media query for phones */
+@media screen and (max-width: 768px) {
+    
+    body {
+        margin: 2em;
+        font-size: medium;
+    }
+
+    h1 {
+        color: darkmagenta;
+        font-family: 'Proxima Nova', Helvetica, sans-serif;
+        font-weight: bolder;
+    }
+
+    img {
+        width: 200px;
+        height: 200px;
+        padding: 10px;
+    }
+
+    /* I had to make some special adjustments for the pineapple because it's so tall */
+    #pineapple_img {
+        width: 175px;
+        height: 200px;
+    }
+
+    .items_for_sale {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        gap: 6px;
+    }
+
+    div[class = product] {
+        border: 1px solid black;
+        background: rgb(236, 234, 234);
+
+        font-family: 'Proxima Nova', Helvetica, sans-serif;
+        font-weight: bold;
+
+        text-align: center;
+    }
+
+    form {
+        padding-bottom: 10px;
+    }
+
+    .cart_container {
+        display: grid;
+        gap: 6px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .summary {
+        background: rgb(236, 234, 234);
+        border: 1px solid black;
+
+        /* grid-column-start: 3;
+        grid-column-end: 4; */
+
+        font-family: 'Proxima Nova', Helvetica, sans-serif;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    #summary_header {
+        text-decoration: underline;
+        text-underline-offset: 6px;
+    }
+
+    .cart_item_list {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
+    .cart_header {
+        background: rgb(236, 234, 234);
+        border: 1px solid black;
+        border-right-style: none;
+        border-left-style: none;
+
+        display: grid;
+        gap: 4px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    div[class = cart_item_header] {
+        font-family: 'Proxima Nova', Helvetica, sans-serif;
+        font-weight: bold;
+        padding-left: 5px;
+    }   
+
+    .cart_item {
+        border: 1px solid black;
+        border-right-style: none;
+        border-left-style: none;
+        border-top-style: none;
+        
+        display: grid;
+        gap: 4px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+
+        font-family: 'Proxima Nova', Helvetica, sans-serif;
+        font-weight: bold;
+        padding-left: 5px;
+    }
+
+    [id *= "_quantity"] {
+        margin-top: 15px;
+        width: 80px;
+    }
+
+    [id *= "_remove"] {
+        margin-bottom: 10px; 
+    }
+}
+
+/* Media query for tablets */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    body {
+        margin: 2em;
+    }
+
+    h1 {
+        color: darkmagenta;
+        font-family: 'Proxima Nova', Helvetica, sans-serif;
+        font-weight: bolder;
+    }
+
+    img {
+        width: 200px;
+        height: 200px;
+        padding: 10px;
+    }
+
+    /* I had to make some special adjustments for the pineapple because it's so tall */
+    #pineapple_img {
+        width: 175px;
+        height: 200px;
+    }
+
+    .items_for_sale {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 6px;
+    }
+
+    div[class = product] {
+        border: 1px solid black;
+        background: rgb(236, 234, 234);
+
+        font-family: 'Proxima Nova', Helvetica, sans-serif;
+        font-weight: bold;
+
+        text-align: center;
+    }
+
+    form {
+        padding-bottom: 10px;
+    }
+
+    .cart_container {
+        display: grid;
+        gap: 6px;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .summary {
+        background: rgb(236, 234, 234);
+        border: 1px solid black;
+
+        grid-column-start: 3;
+        grid-column-end: 4;
+
+        font-family: 'Proxima Nova', Helvetica, sans-serif;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    #summary_header {
+        text-decoration: underline;
+        text-underline-offset: 6px;
+    }
+
+    .cart_item_list {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .cart_header {
+        background: rgb(236, 234, 234);
+        border: 1px solid black;
+        border-right-style: none;
+        border-left-style: none;
+
+        display: grid;
+        gap: 4px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    div[class = cart_item_header] {
+        font-family: 'Proxima Nova', Helvetica, sans-serif;
+        font-weight: bold;
+        padding-left: 5px;
+    }   
+
+    .cart_item {
+        border: 1px solid black;
+        border-right-style: none;
+        border-left-style: none;
+        border-top-style: none;
+        
+        display: grid;
+        gap: 4px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+
+        font-family: 'Proxima Nova', Helvetica, sans-serif;
+        font-weight: bold;
+        padding-left: 5px;
+    }
+
+    [id *= "_quantity"] {
+        margin-top: 15px; 
+        width: 80px;
+    }
+
+    [id *= "_remove"] {
+        margin-bottom: 10px; 
+    }
+
+}
+
+
+
+    
+/* Media query for desktops */
+@media screen and (min-width: 1024px) {
+    body {
+        margin: 2em;
+    }
+
+    h1 {
+        color: darkmagenta;
+        font-family: 'Proxima Nova', Helvetica, sans-serif;
+        font-weight: bolder;
+    }
+
+    img {
+        width: 200px;
+        height: 200px;
+        padding: 10px;
+    }
+
+    /* I had to make some special adjustments for the pineapple because it's so tall */
+    #pineapple_img {
+        width: 175px;
+        height: 200px;
+    }
+
+    .items_for_sale {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 6px;
+    }
+
+    div[class = product] {
+        border: 1px solid black;
+        background: rgb(236, 234, 234);
+
+        font-family: 'Proxima Nova', Helvetica, sans-serif;
+        font-weight: bold;
+
+        text-align: center;
+    }
+
+    form {
+        padding-bottom: 10px;
+    }
+
+    .cart_container {
+        display: grid;
+        gap: 6px;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .summary {
+        background: rgb(236, 234, 234);
+        border: 1px solid black;
+
+        grid-column-start: 3;
+        grid-column-end: 4;
+
+        font-family: 'Proxima Nova', Helvetica, sans-serif;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    #summary_header {
+        text-decoration: underline;
+        text-underline-offset: 6px;
+    }
+
+    .cart_item_list {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .cart_header {
+        background: rgb(236, 234, 234);
+        border: 1px solid black;
+        border-right-style: none;
+        border-left-style: none;
+
+        display: grid;
+        gap: 4px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    div[class = cart_item_header] {
+        font-family: 'Proxima Nova', Helvetica, sans-serif;
+        font-weight: bold;
+        padding-left: 5px;
+    }   
+
+    .cart_item {
+        border: 1px solid black;
+        border-right-style: none;
+        border-left-style: none;
+        border-top-style: none;
+        
+        display: grid;
+        gap: 4px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+
+        font-family: 'Proxima Nova', Helvetica, sans-serif;
+        font-weight: bold;
+        padding-left: 5px;
+    }
+
+    [id *= "_quantity"] {
+        margin-top: 15px;
+        width: 80px;
+    }
+
+    [id *= "_remove"] {
+        margin-bottom: 10px; 
+    }
+}
