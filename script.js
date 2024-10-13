@@ -56,14 +56,12 @@ function executeCommand(command) {
   let output = '';
 
   if ( command.toLowerCase() === 'help' ) {
-    output = 'List of available commands: <br>- resume<br>- about<br>- echo [text]<br>- help';
+    output = 'List of available commands: <br>- resume<br>- echo [text]<br>- help';
   } else if ( command.toLowerCase().startsWith('echo ') ) {
     const text = command.slice(5);
     output = text;
   } else if ( command.toLowerCase() === 'resume' ) {
     window.location.href = 'resume.html';
-  } else if ( command.toLowerCase() === 'about' ) {
-    window.location.href = 'about.html';
   } else {
     output = 'Command not found. Type \'help\' for available commands.';
   }
