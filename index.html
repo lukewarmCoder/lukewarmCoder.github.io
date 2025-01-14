@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Luke Fernandez | Site</title>
+    <link href='https://fonts.googleapis.com/css?family=Lexend Deca' rel='stylesheet'>
+    <link href="https://fonts.cdnfonts.com/css/proxima-nova-2" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu&subset=cyrillic,latin' rel='stylesheet'>
+    <link rel="icon" href="images/LF_icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./script.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <a href="#top" id="name">
+            <h1>Luke Fernandez</h1>
+        </a>
+        <nav>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+        <nav>
+            <ul class="navList">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="Luke_Fernandez_Resume.pdf" target="_blank">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Landing page -->
+    <section id="hero">
+        <div id="typewriter-container">
+            <span id="line1"></span><span class="cursor" id="line1-cursor"></span>
+            <div id="filler"></div>
+            <span id="line2"></span><span class="cursor" id="line2-cursor"></span>
+        </div>
+        <img src="./images/wave-1.svg" id="wave-1"/>
+        <img src="./images/wave-2.svg" id="wave-2"/>
+        <img src="./images/wave-3.svg" id="wave-3" />
+        <img src="./images/wave-4.svg" id="wave-4"/>
+        <img src="./images/wave-haikei.svg" id="shape" />
+    </section>
+
+    <!-- About section -->
+    <section id="about">
+        <h2>About</h2>
+        <p>I'm a Computer Science student with a passion for 
+        combining technology and creativity. With experience in IT support and web development, 
+        I thrive on solving complex problems and delivering user-friendly solutions. 
+        I enjoy learning new tools and techniques to stay on the cutting edge of technology, 
+        and I'm driven by a desire to make impactful contributions through my work.</p>
+    </section>
+
+    <!-- Projects section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div id="projects-container">
+            <div class="project" id="flask-network-dashboard">
+                <h3>Network Monitoring Dashboard</h3>
+                <a href="tbd" target="_blank">
+                    <img src="images/flask-img.jpeg" alt="Screenshot of a Flask-based network monitoring dashboard" loading="lazy">
+                </a>
+                <ul>
+                    <li>Flask</li>
+                    <li>Python</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                </ul>
+                <p>A responsive, Flask-based web application designed to monitor and visualize network activity in real-time.</p>
+            </div>
+            <div class="project" id="video-game-analysis">
+                <h3>Video Game Sales Analysis</h3>
+                <a href="https://github.com/lukerepublic/videogame-sales-analysis" target="_blank">
+                    <img src="images/videogame-analysis-img.png" alt="A bubble graph." loading="lazy">
+                </a>
+                <ul>
+                    <li>SQL</li>
+                    <li>Python</li>
+                    <li>Pandas</li>
+                    <li>Matplotlib</li>
+                </ul>
+                <p>A data-driven system to optimize inventory and sales strategies for
+                    video game retailers and developers.</p>
+            </div>
+            <div class="project" id="myshell">
+                <h3>Myshell</h3>
+                <a href="https://github.com/lukerepublic/MyShell" target="_blank">
+                    <img src="images/myshell-img.png" alt="Screenshot of a custom Linux shell in VS Code." loading="lazy">
+                </a>
+                <ul>
+                    <li>C</li>
+                    <li>Linux</li>
+                    <li>Makefile</li>
+                </ul>
+                <p>A custom Linux shell.</p>
+            </div>
+            <div class="project" id="ecommerce-site">
+                <h3>E-Commerce Site</h3>
+                <a href="projects/ecommerce/ecommerce.html" target="_blank">
+                    <img src="images/cheap-fruit-online.png" alt="Screenshot of an online shopping cart for fruit." loading="lazy">
+                </a>
+                <ul>
+                    <li>JavaScript</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                </ul>
+                <p>An online shopping cart for fruit.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-links">
+            <a href="mailto:lukefern17@gmail.com" class="contact-link" aria-label="Email">
+                <img src="images/mail.png" alt="Email icon">
+                lukefern17@gmail.com
+            </a>
+            <a href="https://www.linkedin.com/in/luke-fernandez-5b1a08256/" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="LinkedIn">
+                <img src="images/linkedin-icon.png" alt="LinkedIn icon">
+                Luke Fernandez
+            </a>
+            <a href="https://github.com/lukerepublic" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="GitHub">
+                <img src="images/Octicons-mark-github.svg.png" alt="GitHub icon">
+                lukerepublic
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 - Luke Fernandez</p>
+    </footer>
+
+</body>
+
+</html>
