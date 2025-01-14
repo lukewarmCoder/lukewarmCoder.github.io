@@ -1,5 +1,5 @@
 const line1 = "Hi, I'm Luke.";
-const line2 = "Just riding the wave."
+const line2 = "An aspiring IT professional."
 
 const line1Cursor = document.getElementById('line1-cursor');
 const line2Cursor = document.getElementById('line2-cursor');
