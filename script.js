@@ -50,13 +50,28 @@ mobileMenu.addEventListener("click", () => {
 });
 
 // Close the mobile menu when you click on a link.
-// Close the mobile menu when you click on a link.
-const navLinks = document.querySelectorAll("nav ul li");
+const navLinks = document.querySelectorAll("nav ul li a");
+const menu_toggle = document.querySelector('.menu-toggle')
+
+function closeMobileMenu() {
+    navList.classList.remove('active'); // Close the menu when clicked
+    mobileMenu.classList.toggle("active");
+}
 
 // Loop through the NodeList
 navLinks.forEach(navLink => {
   navLink.addEventListener("click", () => {
-      navList.classList.remove('active'); // Optional: close the menu when clicked
-      mobileMenu.classList.toggle("active");
+    if (getComputedStyle(menu_toggle).display == 'flex') closeMobileMenu();
   });
+});
+
+// Close the mobile menu when you click on the body
+const secondSpan = document.querySelector('.menu-toggle span:nth-child(2)');
+const header = document.getElementsByTagName('header')[0];
+
+document.addEventListener('click', (event) => {
+    // Check if the click happened outside the header and nav list
+    if (!header.contains(event.target)) {
+        if (getComputedStyle(secondSpan).opacity == 0) closeMobileMenu();
+    }
 });
