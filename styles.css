@@ -315,15 +315,6 @@ form button:hover { background: #005fa3; }
 }
 
 .contact-link:hover img { transform: scale(1.1); }
-  
-  /* @media (min-width: 768px) {
-    .contact-links {
-      flex-direction: row;
-      justify-content: center;
-      gap: 2rem;
-    }
-  }
-   */
 
 
 
@@ -393,7 +384,7 @@ footer {
     position: absolute;
     top: 80px;
     left: 0;
-    background-color: #2772ae;
+    background-color: #384fa2;
     flex-direction: column;
     text-align: center;
   }
