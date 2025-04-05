@@ -29,7 +29,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: "Lexend Deca", sans-serif;
+  font-family: "Noto Sans", sans-serif;
 }
 
 header h1 {
@@ -74,7 +74,7 @@ section h2 {
   border-top: 2px solid #80D0C7;
   text-align: center;
   font-size: 2rem;
-  font-family: "Lexend Deca", sans-serif;
+  font-family: "Noto Sans", sans-serif;
 }
 
 section p { font-size: 1rem; }
