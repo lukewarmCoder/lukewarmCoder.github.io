@@ -369,16 +369,20 @@ footer {
 
 
 /* ============================================================================================================ */
-/* ============================================================================================================ */
 /*                                               Media Queries                                                  */
+/* ============================================================================================================ */
 
-/* Extra small devices (phones in portrait mode) */
-@media (max-width: 599px) {
-
-  header h1 {
-    font-size: 1.5em;
+/* Base mobile styles (mobile-first approach) */
+@media (max-width: 767px) {
+  /* Header and navigation */
+  header {
+    padding: 20px;
   }
-
+  
+  header h1 {
+    font-size: 1.5rem;
+  }
+  
   header nav ul {
     display: none;
     width: 100%;
@@ -388,81 +392,104 @@ footer {
     background-color: #384fa2;
     flex-direction: column;
     text-align: center;
+    z-index: 1001;
   }
-
+  
   header nav ul.active {
     display: flex;
     gap: 5px;
     padding: 10px;
   }
-
+  
   .menu-toggle {
     display: flex;
   }
   
+  /* Hero section */
   #typewriter-container {
-    padding-top: 30%;
+    padding-top: 20%;
     margin-left: 0;
     text-align: center;
   }
-
+  
   #typewriter-container #line1 {
-    font-size: 2em;
-  }
-
-  #about p { padding: 0px 0px; }
-
-}
-
-/* Small devices (phones in landscape mode) */
-@media (min-width: 600px) and (max-width: 767px) {
-
-  header nav ul {
-    display: none;
-    width: 100%;
-    position: absolute;
-    top: 80px;
-    left: 0;
-    background-color: #384fa2;
-    flex-direction: column;
-    text-align: center;
-  }
-
-  header nav ul.active {
-    display: flex;
-    gap: 5px;
-    padding: 10px;
-  }
-
-  .menu-toggle {
-    display: flex;
+    font-size: 2.5rem;
   }
   
-  #typewriter-container {
-    padding-top: 15%;
+  #typewriter-container #line2 {
+    font-size: 1.2rem;
   }
-
-  #about p { padding: 0px 40px; }
-
+  
+  /* About section */
+  #about p {
+    padding: 0;
+  }
+  
+  /* Projects section */
+  .project {
+    max-width: 100%;
+  }
 }
 
-/* Medium devices (tablets) */
+/* Extra small devices (phones in portrait mode) */
+@media (max-width: 599px) {
+  #typewriter-container {
+    padding-top: 30%;
+  }
+  
+  #typewriter-container #line1 {
+    font-size: 2rem;
+  }
+  
+  #typewriter-container #line2 {
+    font-size: 1rem;
+  }
+  
+  section {
+    padding: 20px 25px;
+  }
+}
+
+/* Small to medium devices (tablets) */
 @media (min-width: 768px) and (max-width: 1023px) {
-
+  /* Navigation menu is displayed normally */
+  .menu-toggle {
+    display: none;
+  }
+  
+  /* Hero section */
   #typewriter-container {
     padding-top: 15%;
+    margin-left: 30px;
+    text-align: left;
   }
-
-  #about p { padding: 0px 80px; }
-
+  
+  /* About section */
+  #about p {
+    padding: 0 80px;
+  }
+  
+  /* Projects section */
+  .project {
+    max-width: 450px;
+  }
 }
 
-/* Large devices (laptops and small desktops) */
-@media (min-width: 1024px) and (max-width: 1279px) {
-  /* Original CSS */
-}
-
-/* Extra large devices (desktops and large screens) */
-@media (min-width: 1280px) {
-  /* No need to change anything */
+/* Large devices (laptops and desktops) */
+@media (min-width: 1024px) {
+  /* Hero section */
+  #typewriter-container {
+    padding-top: 5%;
+    margin-left: 30px;
+  }
+  
+  /* About section */
+  #about p {
+    padding: 0 200px;
+  }
+  
+  /* Projects section */
+  .project {
+    max-width: 550px;
+  }
 }
