@@ -1,19 +1,33 @@
-const line1 = "Hi, I'm Luke.";
-const line2 = "An aspiring software developer."
 
+// Typewriter text configuration
+const line1 = "Hi, I'm Luke.";
+const line2 = "An aspiring software developer.";
+
+// DOM elements
 const line1Cursor = document.getElementById('line1-cursor');
 const line2Cursor = document.getElementById('line2-cursor');
+const mobileMenu = document.getElementById("mobile-menu");
+const navList = document.querySelector(".navList");
+const navLinks = document.querySelectorAll("nav ul li a");
+const menuToggle = document.querySelector('.menu-toggle');
+const header = document.getElementsByTagName('header')[0];
 
-// Resuable sleep function
+// Hide line2 cursor initially
+if (line2Cursor) {
+    line2Cursor.style.display = 'none';
+}
+
+// Reusable sleep function
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 // Typewriter function
 function typeText(elementId, text, speed, callback) {
-  
     const element = document.getElementById(elementId);
-    var index = 0;
+    if (!element) return;
+    
+    let index = 0;
 
     function type() {
         if (index < text.length) {
@@ -25,53 +39,49 @@ function typeText(elementId, text, speed, callback) {
         }
     }
 
-  type();
+    type();
 }
 
-// Begin program execution
-typeText('line1', line1, 80, async function() {
-  
-    await sleep(800); // Short pause
-    line1Cursor.style.display = 'inline'; // Remove the line1 cursor
-    line2Cursor.style.display = 'inline-block'; // Show the line2 cursor
-
-    typeText('line2', line2, 60);
-});
-
-
-
-
-const mobileMenu = document.getElementById("mobile-menu");
-const navList = document.querySelector(".navList");
-
-mobileMenu.addEventListener("click", () => {
-    mobileMenu.classList.toggle("active");
-    navList.classList.toggle("active");
-});
-
-// Close the mobile menu when you click on a link.
-const navLinks = document.querySelectorAll("nav ul li a");
-const menu_toggle = document.querySelector('.menu-toggle')
-
+// Close mobile menu function
 function closeMobileMenu() {
-    navList.classList.remove('active'); // Close the menu when clicked
-    mobileMenu.classList.toggle("active");
+    if (navList) navList.classList.remove('active'); // Close the menu when clicked
+    if (mobileMenu) mobileMenu.classList.remove("active");
 }
 
-// Loop through the NodeList
-navLinks.forEach(navLink => {
-  navLink.addEventListener("click", () => {
-    if (getComputedStyle(menu_toggle).display == 'flex') closeMobileMenu();
-  });
-});
-
-// Close the mobile menu when you click on the body
-const secondSpan = document.querySelector('.menu-toggle span:nth-child(2)');
-const header = document.getElementsByTagName('header')[0];
-
-document.addEventListener('click', (event) => {
-    // Check if the click happened outside the header and nav list
-    if (!header.contains(event.target)) {
-        if (getComputedStyle(secondSpan).opacity == 0) closeMobileMenu();
+// Event listeners
+document.addEventListener('DOMContentLoaded', function() {
+    // Begin typewriter animation
+    if (document.getElementById('line1')) {
+        typeText('line1', line1, 80, async function() {
+            await sleep(800); // Short pause
+            if (line1Cursor) line1Cursor.style.display = 'none'; // Hide the line1 cursor
+            if (line2Cursor) line2Cursor.style.display = 'inline-block'; // Show the line2 cursor
+            typeText('line2', line2, 60);
+        });
     }
+
+    // Mobile menu toggle
+    if (mobileMenu) {
+        mobileMenu.addEventListener("click", (e) => {
+            e.stopPropagation();
+            mobileMenu.classList.toggle("active");
+            navList.classList.toggle("active");
+        });
+    }
+
+    // Close menu when clicking a link
+    navLinks.forEach(navLink => {
+        navLink.addEventListener("click", () => {
+            if (menuToggle && window.getComputedStyle(menuToggle).display === 'flex') {
+                closeMobileMenu();
+            }
+        });
+    });
+
+    // Close the mobile menu when clicking outside the menu
+    document.addEventListener('click', (event) => {
+        if (navList && navList.classList.contains('active') && header && !header.contains(event.target)) {
+            closeMobileMenu();
+        }
+    });
 });

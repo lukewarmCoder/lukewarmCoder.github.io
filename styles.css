@@ -39,7 +39,9 @@ header h1 {
   color: white;
 }
 
-header #name { text-decoration: none; }
+header #name { 
+  text-decoration: none; 
+}
 
 nav ul {
   list-style: none;
@@ -56,9 +58,9 @@ nav ul li a {
   transition: color 0.3s ease;
 }
 
-nav ul li a:hover { color: #edea30; }
-
-
+nav ul li a:hover { 
+  color: #edea30; 
+}
 
 
 /* General section styles */
@@ -77,7 +79,9 @@ section h2 {
   font-family: "Noto Sans", sans-serif;
 }
 
-section p { font-size: 1rem; }
+section p { 
+  font-size: 1rem; 
+}
 
 
 
@@ -132,26 +136,30 @@ section p { font-size: 1rem; }
 }
 
 @keyframes blink {
-  50% { opacity: 0; /* Make it disappear midway through the animation */ }
+  50% { opacity: 0; }
 }
+
 
 
 /* Waves */
 #shape {
   position: absolute;
   right: 0;
-  bottom: -0.5vw;
+  bottom: 0;
   width: 100%;
+  height: auto;
 }
 
 #hero img:not(#shape) {
   position: absolute;
   left: 0;
+  width: 100%;
+  height: auto;
 }
 
 #hero #wave-1 {
   opacity: 0.4;
-  bottom: -0.1vw;
+  bottom: 0;
   animation: move-wave-1 5s infinite;
 }
 
@@ -161,39 +169,41 @@ section p { font-size: 1rem; }
 
 #hero #wave-2 {
   opacity: 0.3;
-  bottom: 0.5vw;
+  bottom: 5px;
   animation: move-wave-2 4s infinite;
 }
 
 @keyframes move-wave-2 {
-  50% { transform: translateY(35px); }
+  50% { transform: translateY(20px); }
 }
 
 #hero #wave-3 {
-  bottom: 0.3vw;
+  bottom: 3px;
   opacity: 0.2;
   animation: move-wave-3 3.5s infinite;
 }
 
 @keyframes move-wave-3 {
-  50% { transform: translateY(25px); }
+  50% { transform: translateY(15px); }
 }
 
 #hero #wave-4 {
-  bottom: 0.1vw;
+  bottom: 1px;
   opacity: 0.3;
   animation: move-wave-4 3s infinite;
 }
 
 @keyframes move-wave-4 {
-  50% { transform: translateY(20px) }
+  50% { transform: translateY(12px) }
 }
 
 
 
 
 /* About section */
-#about p { padding: 0px 200px; }
+#about p { 
+  padding: 0px 200px; 
+}
 
 
 
@@ -256,33 +266,6 @@ section p { font-size: 1rem; }
 
 
 /* Contact section */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-form label { font-weight: bold; }
-
-form input, form textarea, form button {
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-form button {
-  background: #0077cc;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-form button:hover { background: #005fa3; }
-
-
-
 .contact-links {
   display: flex;
   flex-direction: column;
@@ -309,11 +292,13 @@ form button:hover { background: #005fa3; }
 }
 
 .contact-link:hover {
-  color: #0077b5; /* Example color for LinkedIn */
+  color: #0077b5;
   transform: translateY(-2px);
 }
 
-.contact-link:hover img { transform: scale(1.1); }
+.contact-link:hover img { 
+  transform: scale(1.1); 
+}
 
 
 
@@ -341,6 +326,7 @@ footer {
   cursor: pointer;
   top: 22px;
   right: 20px;
+  z-index: 1001;
 }
 
 .bar {
@@ -367,14 +353,16 @@ footer {
 
 
 /* ============================================================================================================ */
-/* ============================================================================================================ */
 /*                                               Media Queries                                                  */
+/* ============================================================================================================ */
 
-/* Extra small devices (phones in portrait mode) */
 @media (max-width: 599px) {
-
+  header {
+    padding: 0 20px;
+  }
+  
   header h1 {
-    font-size: 1.5em;
+    font-size: 1.5rem;
   }
 
   header nav ul {
@@ -386,35 +374,86 @@ footer {
     background-color: #384fa2;
     flex-direction: column;
     text-align: center;
+    padding: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 
   header nav ul.active {
     display: flex;
-    gap: 5px;
-    padding: 10px;
+    gap: 0;
+    padding: 10px 0;
+  }
+  
+  header nav ul li {
+    width: 100%;
+    padding: 12px 0;
   }
 
   .menu-toggle {
     display: flex;
   }
   
+  section {
+    padding: 20px;
+  }
+  
   #typewriter-container {
-    padding-top: 30%;
+    height: auto;
+    padding-top: 25%;
     margin-left: 0;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   #typewriter-container #line1 {
-    font-size: 2em;
+    font-size: 2.2rem;
+  }
+  
+  #typewriter-container #line2 {
+    font-size: 1.2rem;
+    margin-top: 15px;
+  }
+  
+  #filler {
+    height: 20px;
   }
 
-  #about p { padding: 0px 0px; }
-
+  .project ul {
+    gap: 8px;
+  }
+  
+  .project ul li {
+    font-size: 0.9rem;
+  }
+  
+  /* Adjust wave animations for smaller screens */
+  #hero #wave-1, #hero #wave-2, #hero #wave-3, #hero #wave-4 {
+    max-height: 120px;
+    object-fit: cover;
+    object-position: bottom;
+  }
+  
+  @keyframes move-wave-1 { 
+    50% { transform: translateY(8px); }
+  }
+  
+  @keyframes move-wave-2 {
+    50% { transform: translateY(10px); }
+  }
+  
+  @keyframes move-wave-3 {
+    50% { transform: translateY(6px); }
+  }
+  
+  @keyframes move-wave-4 {
+    50% { transform: translateY(7px); }
+  }
 }
 
 /* Small devices (phones in landscape mode) */
 @media (min-width: 600px) and (max-width: 767px) {
-
   header nav ul {
     display: none;
     width: 100%;
@@ -424,12 +463,18 @@ footer {
     background-color: #384fa2;
     flex-direction: column;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 
   header nav ul.active {
     display: flex;
-    gap: 5px;
-    padding: 10px;
+    gap: 0;
+    padding: 10px 0;
+  }
+  
+  header nav ul li {
+    width: 100%;
+    padding: 10px 0;
   }
 
   .menu-toggle {
@@ -437,30 +482,45 @@ footer {
   }
   
   #typewriter-container {
-    padding-top: 15%;
+    padding-top: 10%;
+    margin-left: 30px;
   }
-
-  #about p { padding: 0px 40px; }
-
+  
+  #about p { 
+    padding: 0 40px;
+  }
+  
+  /* Adjust wave animations */
+  @keyframes move-wave-1 { 
+    50% { transform: translateY(10px); }
+  }
+  
+  @keyframes move-wave-2 {
+    50% { transform: translateY(15px); }
+  }
 }
 
 /* Medium devices (tablets) */
 @media (min-width: 768px) and (max-width: 1023px) {
-
   #typewriter-container {
-    padding-top: 15%;
+    padding-top: 10%;
   }
 
-  #about p { padding: 0px 80px; }
-
+  #about p { 
+    padding: 0 60px;
+  }
 }
 
 /* Large devices (laptops and small desktops) */
-@media (min-width: 1024px) and (max-width: 1279px) {
-  /* Original CSS */
+@media (min-width: 1024px) {
+  #about p { 
+    padding: 0 100px;
+  }
 }
 
-/* Extra large devices (desktops and large screens) */
+/* Extra large devices */
 @media (min-width: 1280px) {
-  /* No need to change anything */
+  #about p { 
+    padding: 0 200px;
+  }
 }
