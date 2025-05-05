@@ -35,7 +35,7 @@ header {
 header h1 {
   margin-bottom: 5px;
   font-size: 2rem;
-  font-weight: 500;
+  font-weight: 600;
   color: white;
 }
 
@@ -52,7 +52,7 @@ nav ul li a {
   color: #fff;
   text-decoration: none;
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: 600;
   transition: color 0.3s ease;
 }
 
@@ -89,7 +89,6 @@ section p { font-size: 1rem; }
   position: relative;
   overflow: hidden;
 }
-
 
 
 
