@@ -504,3 +504,20 @@ footer {
     max-width: 550px;
   }
 }
+
+
+
+/* iOS - specific fixes */
+@supports (-webkit-touch-callout: none) {
+  /* iOS only */
+  #hero img:not(#shape) {
+    width: 200%; /* Much wider for iOS */
+    left: -50%; /* Center it */
+    max-width: none; /* Override any max-width */
+  }
+  
+  #hero #wave-1 {
+    width: 250%; /* Extra wide on iOS */
+    left: -75%; /* Reposition accordingly */
+  }
+}
