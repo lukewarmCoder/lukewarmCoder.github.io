@@ -148,13 +148,24 @@ section p { font-size: 1rem; }
   position: absolute;
   left: 0;
   width: 100%; /* Ensure all wave images take full width */
-  min-width: 100%;
+  min-width: 100%; /* Prevent shrinking below viewport width */
 }
 
+/* Specific fix for the frontal wave image */
 #hero #wave-1 {
   opacity: 0.4;
   bottom: -0.1vw;
   animation: move-wave-1 5s infinite;
+  width: 120%; /* Make the frontal wave wider than the viewport */
+  left: -10%; /* Offset to the left to center it */
+}
+
+@media (max-width: 490px) {
+  /* Increase width even more on very small screens */
+  #hero #wave-1 {
+    width: 180%; /* Much wider on mobile */
+    left: -40%; /* Position it further to the left */
+  }
 }
 
 @keyframes move-wave-1 { 
