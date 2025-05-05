@@ -147,6 +147,8 @@ section p { font-size: 1rem; }
 #hero img:not(#shape) {
   position: absolute;
   left: 0;
+  width: 100%; /* Ensure all wave images take full width */
+  min-width: 100%;
 }
 
 #hero #wave-1 {
