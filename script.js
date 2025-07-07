@@ -1,7 +1,7 @@
 
 // Typewriter text configuration
 const line1 = "Hi, I'm Luke.";
-const line2 = "An aspiring back-end developer.";
+const line2 = "An aspiring backend developer.";
 
 // DOM elements
 const line1Cursor = document.getElementById('line1-cursor');
